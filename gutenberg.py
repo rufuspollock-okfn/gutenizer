@@ -115,3 +115,22 @@ class GutenbergCleaner(object):
         indices = [ self._find_min(phrase, self.etextStr) for phrase in footerStartPhrases]
         return min(indices)
 
+import sys
+import urllib2
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        msg = 'You need to provide the url of a Gutenberg text, e.g.:\n\n'
+        msg += 'python gutenberg.py http://www.gutenberg.org/dirs/etext00/0ws2510.txt'
+        print msg
+        sys.exit(0)
+
+    url = sys.argv[1]
+    # Gutenberg seems to prevent access by anything that isn't "human" - we are
+    # not a bot though so ...
+    headers = { 'User-Agent' : '"Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)"' }
+    req = urllib2.Request(url, None, headers)
+    fileobj = urllib2.urlopen(req)
+    # print 'Loaded: %s' % url
+    cleaner = GutenbergCleaner(fileobj)
+    print cleaner.extract_text()
+
