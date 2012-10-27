@@ -5,6 +5,15 @@ https://github.com/okfn/shakespeare.
 
 .. _Open Shakespeare: http://openshakespeare.org/
 
+Tests
+*****
+
+Running the tests::
+
+    nostests tests/test_gutenberg.py
+
+Note that we have test data in ``tests/data``.
+
 Copyright and License
 *********************
 
