@@ -5,6 +5,17 @@ https://github.com/okfn/shakespeare.
 
 .. _Open Shakespeare: http://openshakespeare.org/
 
+Usage
+*****
+
+Download the gutenberg.py script (or clone the entire repo).
+
+Use the script as follows::
+
+    ./gutenberg.py {url-to-raw-gutenberg-text}
+
+The cleaned version of the text will then be printed to standard out.
+
 Tests
 *****
 

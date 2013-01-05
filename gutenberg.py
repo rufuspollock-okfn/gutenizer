@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """Various useful functionality related to Project Gutenberg
 
 Gutenberg Index and URLs
@@ -120,7 +121,7 @@ import urllib2
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         msg = 'You need to provide the url of a Gutenberg text, e.g.:\n\n'
-        msg += 'python gutenberg.py http://www.gutenberg.org/dirs/etext00/0ws2510.txt'
+        msg += 'gutenberg.py http://www.gutenberg.org/dirs/etext00/0ws2510.txt'
         print msg
         sys.exit(0)
 
